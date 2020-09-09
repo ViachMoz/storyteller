@@ -18,11 +18,15 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw] # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 end
 
-group :development do
+group :development, :test do
+  gem 'awesome_print', '~> 1.8'         # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'         # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'listen', '~> 3.2'
   gem 'spring'                          # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'binding_of_caller', '~> 0.8.0'   # Retrieve the binding of a method's caller. Can also retrieve bindings even further up the stack.
+  gem 'better_errors', '~> 2.5', '>= 2.5.1'  # Provides a better error page for Rails and other Rack apps.
+  gem 'faker'                           # Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.
 end
 
 group :test do

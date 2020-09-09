@@ -4,11 +4,18 @@ class ArticlesController < ApplicationController
   def index
     if !request.query_parameters.present?
       @articles = Article.all.to_json
+      @stories = Story.all.map do |story|
+        {
+            id: story.id,
+            name: story.name,
+            articles: story.articles.count
+        }
+      end.to_json
     else
       if params[:q].present?
         @articles = Article.where('Name LIKE :query OR Text LIKE :query', query: "%#{params[:q]}%")
       else
-        @articles = Article.all
+        @articles = Article.all.to_json
       end
 
       if params[:sort].present?
