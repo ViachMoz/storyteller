@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.7'                # Build JSON APIs with ease. Read more: 
 # gem 'image_processing', '~> 1.2'      # Use Active Storage variant
 gem 'bootsnap', '>= 1.4.2', require: false  # Reduces boot times through caching; required in config/boot.rb
 gem 'unicorn'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw] # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -27,7 +28,6 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'binding_of_caller', '~> 0.8.0'   # Retrieve the binding of a method's caller. Can also retrieve bindings even further up the stack.
   gem 'better_errors', '~> 2.5', '>= 2.5.1'  # Provides a better error page for Rails and other Rack apps.
-  gem 'faker'                           # Faker, a port of Data::Faker from Perl, is used to easily generate fake data: names, addresses, phone numbers, etc.
 end
 
 group :test do
