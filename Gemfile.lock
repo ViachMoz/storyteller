@@ -58,7 +58,7 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    awesome_print (1.8.0)
+    awesome_print (2.0.0.pre2)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -226,7 +226,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  awesome_print (~> 1.8)
+  awesome_print (~> 2.0.0.pre2)
   better_errors (~> 2.5, >= 2.5.1)
   binding_of_caller (~> 0.8.0)
   bootsnap (>= 1.4.2)
