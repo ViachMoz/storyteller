@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.7'                # Build JSON APIs with ease. Read more: 
 # gem 'bcrypt', '~> 3.1.7'              # Use Active Model has_secure_password
 # gem 'image_processing', '~> 1.2'      # Use Active Storage variant
 gem 'bootsnap', '>= 1.4.2', require: false  # Reduces boot times through caching; required in config/boot.rb
+gem 'unicorn'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw] # Call 'byebug' anywhere in the code to stop execution and get a debugger console
