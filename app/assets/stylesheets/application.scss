@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+
+th {
+  cursor: pointer !important;
+  &:hover {
+    background: #e2e2e270;
+  }
+}
