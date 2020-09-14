@@ -231,7 +231,7 @@ DEPENDENCIES
   awesome_print (~> 2.0.0.pre2)
   better_errors (~> 2.5, >= 2.5.1)
   binding_of_caller (~> 0.8.0)
-  bootsnap (>= 1.4.2)
+  bootsnap (= 1.4.8)
   byebug
   capybara (>= 2.15)
   faker

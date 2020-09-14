@@ -12,7 +12,7 @@ gem 'jbuilder', '~> 2.7'                # Build JSON APIs with ease. Read more: 
 # gem 'redis', '~> 4.0'                 # Use Redis adapter to run Action Cable in production
 # gem 'bcrypt', '~> 3.1.7'              # Use Active Model has_secure_password
 # gem 'image_processing', '~> 1.2'      # Use Active Storage variant
-gem 'bootsnap', '>= 1.4.2', require: false  # Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '1.4.8', require: false  # Reduces boot times through caching; required in config/boot.rb
 gem 'unicorn'
 gem 'faker'
 
