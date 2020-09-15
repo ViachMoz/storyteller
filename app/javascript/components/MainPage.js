@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import axios from "axios"
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { FormControl, InputGroup, Container, Row, Col, ButtonGroup, Button } from 'react-bootstrap'
 import StoriesTable from "./tables/StoriesTable";
 import ArticlesTables from "./tables/ArticlesTables";
