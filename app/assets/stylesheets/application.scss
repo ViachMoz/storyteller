@@ -14,10 +14,25 @@
  *= require_self
  */
 
+@import "bootstrap/scss/bootstrap";
 
 th {
   cursor: pointer !important;
+
   &:hover {
     background: #e2e2e270;
   }
+}
+
+.input-group {
+  margin: 2% 0% 2% 0%;
+}
+
+.headline {
+  padding: 1%;
+  background: #17a2b859;
+  color: white;
+  font-size: 40px;
+  font-family: fantasy;
+  text-align: center;
 }

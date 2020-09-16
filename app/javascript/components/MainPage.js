@@ -44,6 +44,13 @@ class MainPage extends React.Component {
                 <Container>
                     <Row>
                         <Col>
+                            <div className="headline">
+                                Storyteller
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
                             <InputGroup>
                                 <InputGroup.Prepend>
                                     <InputGroup.Text id="inputGroup-sizing-default">Search...</InputGroup.Text>
