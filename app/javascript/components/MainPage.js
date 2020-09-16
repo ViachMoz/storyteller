@@ -6,11 +6,25 @@ import StoriesTable from "./tables/StoriesTable";
 import ArticlesTables from "./tables/ArticlesTables";
 import ArticleButtons from "./ui/ArticleButtons";
 import StoryButtons from "./ui/StoryButtons";
+import ActionCable from 'actioncable';
+import consumer from "../channels/consumer"
 
 class MainPage extends React.Component {
     state = {
         articles: JSON.parse(this.props.articles),
         stories: JSON.parse(this.props.stories),
+        updated: false
+    }
+
+    componentDidMount() {
+        this.subscription = consumer.subscriptions.create("IndexChannel", {
+            received: data => {this.updateArcticleData(data)}
+        });
+    }
+
+    updateArcticleData = (data) => {
+        this.setState({articles: JSON.parse(data)})
+        this.setState({updated: false})
     }
 
     getArticles = (query) => {
@@ -31,6 +45,14 @@ class MainPage extends React.Component {
             .catch(err => {
                 console.log(err)
             })
+    }
+
+    deleteArticle = (id) => {
+        const newList = this.state.articles.list.filter((article) => article.id !== id);
+        const newArticles = { grouped: this.state.articles.grouped,list: newList }
+
+        // this.setState({articles: newArticles});
+        this.subscription.send({id: id})
     }
 
     onSearch = (val) => {
@@ -81,6 +103,7 @@ class MainPage extends React.Component {
                             <ArticlesTables
                                 articles={this.state.articles}
                                 getArticles={this.getArticles}
+                                onDeleteArticle={this.deleteArticle}
                             />
                         </Col>
                     </Row>

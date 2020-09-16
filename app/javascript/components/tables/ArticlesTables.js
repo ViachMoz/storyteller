@@ -23,6 +23,10 @@ class ArticlesTables extends React.Component {
         this.props.getArticles(query)
     };
 
+    handleDelete = (id) => {
+        this.props.onDeleteArticle(id)
+    }
+
     render () {
         return (
             this.props.articles.grouped ?
@@ -45,6 +49,7 @@ class ArticlesTables extends React.Component {
                                         <td>{list.name}</td>
                                         <td>{list.text}</td>
                                         <td>{list.article_type}</td>
+                                        <td className="delete-article" onClick={ id => this.handleDelete(list.id)}>x</td>
                                     </tr>
                                 )
                             })}
@@ -70,6 +75,7 @@ class ArticlesTables extends React.Component {
                                 <td>{row.name}</td>
                                 <td>{row.text}</td>
                                 <td>{row.article_type}</td>
+                                <td className="delete-article" onClick={ id => this.handleDelete(row.id)}>x</td>
                             </tr>
                         )
                     })}

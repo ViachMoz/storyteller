@@ -36,3 +36,11 @@ th {
   font-family: fantasy;
   text-align: center;
 }
+
+.delete-article {
+  cursor: pointer;
+
+  &:hover {
+    background: #bbbdbf;
+  }
+}

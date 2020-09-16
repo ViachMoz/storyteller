@@ -18,6 +18,11 @@ class StoriesTable extends React.Component {
         this.props.getStories(query)
     };
 
+    onSortStoryLast = () => {
+        let query = `/?place=story&sort=created_at`;
+        this.props.getStories(query)
+    };
+
     render () {
         return (
             this.props.stories.grouped ?
@@ -29,6 +34,7 @@ class StoriesTable extends React.Component {
                                 <th onClick={this.onSortStoryId}>#</th>
                                 <th onClick={this.onSortStoryName}>Story name</th>
                                 <th onClick={this.onSortStorySum}>Articles sum</th>
+                                <th onClick={this.onSortStoryLast}>Last Created</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -38,6 +44,7 @@ class StoriesTable extends React.Component {
                                         <td>{story.id}</td>
                                         <td>{story.name}</td>
                                         <td>{story.articles}</td>
+                                        <td>{row.last_created}</td>
                                     </tr>
                                 )
                             })}
@@ -52,6 +59,7 @@ class StoriesTable extends React.Component {
                     <th onClick={this.onSortStoryId}>#</th>
                     <th onClick={this.onSortStoryName}>Story name</th>
                     <th onClick={this.onSortStorySum}>Articles sum</th>
+                    <th onClick={this.onSortStoryLast}>Last Created</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -61,6 +69,7 @@ class StoriesTable extends React.Component {
                             <td>{row.id}</td>
                             <td>{row.name}</td>
                             <td>{row.articles}</td>
+                            <td>{row.last_created}</td>
                         </tr>
                     )
                 })}

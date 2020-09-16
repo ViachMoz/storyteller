@@ -30,7 +30,13 @@ class QueryHandler
           result = decorate_story(Story.all)
         else
           if @params[:sort].present?
-            result = decorate_story(Story.all.sort_by { |article| article[@params[:sort]] })
+            if @params[:sort] == 'created_at'
+              result = decorate_story(Story.all.sort_by { |article| article.articles.last.created_at }.reverse)
+            elsif @params[:sort] == 'sum'
+              result = decorate_story(Story.all.sort_by { |article| article.articles.count }.reverse)
+            else
+              result = decorate_story(Story.all.sort_by { |article| article[@params[:sort]] })
+            end
           end
 
           if @params[:story_group].present?
@@ -80,7 +86,7 @@ class QueryHandler
           id: story.id,
           name: story.name,
           articles: articles.count,
-          last_created: articles.last.created_at
+          last_created: articles.last.created_at.strftime("%m/%d/%Y - at %I:%M%p")
       }
     end
   end
