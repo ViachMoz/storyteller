@@ -12,8 +12,7 @@ import consumer from "../channels/consumer"
 class MainPage extends React.Component {
     state = {
         articles: JSON.parse(this.props.articles),
-        stories: JSON.parse(this.props.stories),
-        updated: false
+        stories: JSON.parse(this.props.stories)
     }
 
     componentDidMount() {
@@ -24,7 +23,6 @@ class MainPage extends React.Component {
 
     updateArcticleData = (data) => {
         this.setState({articles: JSON.parse(data)})
-        this.setState({updated: false})
     }
 
     getArticles = (query) => {
@@ -50,8 +48,6 @@ class MainPage extends React.Component {
     deleteArticle = (id) => {
         const newList = this.state.articles.list.filter((article) => article.id !== id);
         const newArticles = { grouped: this.state.articles.grouped,list: newList }
-
-        // this.setState({articles: newArticles});
         this.subscription.send({id: id})
     }
 
