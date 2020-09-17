@@ -1,1 +1,0 @@
-RAILS_ENV=”production” environment is not defined in config/webpacker.yml, falling back to production environment
