@@ -15,4 +15,4 @@ Instalation:
 
 You're up to go!
 
-This project in production: `http://3.136.157.8/`gi
+This project in production: `http://3.136.157.8/`
