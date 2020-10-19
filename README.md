@@ -14,5 +14,3 @@ Instalation:
 7. `yarn install`
 
 You're up to go!
-
-This project in production: `http://3.136.157.8/`
